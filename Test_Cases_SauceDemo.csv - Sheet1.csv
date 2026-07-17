@@ -1,0 +1,38 @@
+ Test Case ID,Title,Steps,Expected Result,Actual Result,Status
+TC-01,Valid login,"1. Go to saucedemo.com 
+2. Enter standard_user / secret_sauce 
+3. Click Login",User is taken to the Products page,"Redirected to Products page successfully, all products visible",PASS
+TC-02,Invalid Password,"1. Enter standard_user / wrongpassword 
+2. Click Login","Error message appears, user stays on login page","It displays :
+""Epic sadface: Username and password do not match any user in this service""
+and stay's on the login page",PASS
+TC-03,Empty Username Field,"1. Leave username blank 
+2. Enter password 
+3. Click Login","Error: ""Username is required""","It displays :
+""Epic sadface: Username is required""
+and stay's on the login page",PASS
+TC-04,Empty Password Field,"1. Enter username 
+2. Leave password blank 
+3. Click Login","Error: ""Password is required""","It displays :
+""Epic sadface: Password is required""
+and stay's on the login page",PASS
+TC-05,Locked-Out User,"1. Enter locked_out_user / secret_sauce 
+2. Click Login","Error: ""Sorry, this user has been locked out""","It displays :
+""Epic sadface: Sorry, this user has been locked out.""
+and stay's on the login page",
+TC-06,Add single item to cart,"1. Login as standard_user 
+2. Click ""Add to cart"" on any product","Cart icon shows ""1""",Cart Icon Shows 1 Item,PASS
+TC-07,Add multiple item to cart,1. Add 3 different products to cart,"Cart icon shows ""3""",Cart icon shows 3 item,PASS
+TC-08,Remove item from cart,"1. Add item to cart , 2. Click ""Remove""",Cart icon count decreases by 1,"Item removed from cart, cart icon returned to empty state showing no count""",FAIL
+TC-09,Sort Products by price (Low to High),"1. Go to Products page 
+2. Select ""Price (low to high)"" from sort dropdown",Products display in ascending price order,The products are sorted by  low to high price ,PASS
+TC-10,Checkout without valid info,"1. Add item to cart 
+2. Click Checkout 
+3. Enter name, zip, postal code 
+4. Click Continue",User proceeds to order overview page,User proceeds to order overview page where all the information are displayed, PASS
+TC-11,Checkout with missing info,"1. Click Checkout 
+2. Leave ""First Name"" blank 
+3. Click Continue","Error message: ""First Name is required""","it displays ""Error: First Name is required"" and stay's on the same page", PASS
+TC-12,Logout Functionality,"1. Login 
+2. Click menu (☰) 
+3. Click Logout",User is returned to login page,User gets logged out of the website and returns to the login page,PASS
